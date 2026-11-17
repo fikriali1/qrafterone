@@ -1,5 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ===== VARIABLE FONT NAV HOVER ===== */
+  document.querySelectorAll('.nav__links a').forEach(link => {
+    const text = link.textContent.trim();
+    link.textContent = '';
+    link.setAttribute('data-vfh', '');
+
+    const chars = text.split('');
+    const mid = (chars.length - 1) / 2;
+    const staggerMs = 30;
+
+    chars.forEach((char, i) => {
+      const span = document.createElement('span');
+      span.textContent = char === ' ' ? ' ' : char;
+      span.style.setProperty('--vfh-delay', Math.abs(i - mid) * staggerMs + 'ms');
+      link.appendChild(span);
+    });
+
+    link.addEventListener('mouseenter', () => {
+      link.querySelectorAll('span').forEach(s => s.classList.add('is-hover'));
+    });
+    link.addEventListener('mouseleave', () => {
+      link.querySelectorAll('span').forEach(s => s.classList.remove('is-hover'));
+    });
+  });
+
   /* ===== FAQ ACCORDION ===== */
   const faqItems = document.querySelectorAll('.faq-item');
 

@@ -284,11 +284,33 @@ section {
   gap: 36px;
   color: var(--ink2);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
-.nav__links a { transition: color .15s; }
+.nav__links a {
+  display: inline-flex;
+  transition: color .15s;
+  font-variation-settings: 'wght' 400;
+}
 .nav__links a:hover, .nav__links a.is-active { color: var(--ink); }
+
+/* Per-character variable font hover */
+[data-vfh] span {
+  display: inline-block;
+  font-variation-settings: 'wght' 400;
+  transition: font-variation-settings .3s ease;
+  transition-delay: var(--vfh-delay, 0ms);
+  will-change: font-variation-settings;
+}
+[data-vfh] span.is-hover {
+  font-variation-settings: 'wght' 700;
+}
+.nav__links a.is-active {
+  font-variation-settings: 'wght' 600;
+}
+.nav__links a.is-active span {
+  font-variation-settings: 'wght' 600;
+}
 .nav__logo:focus-visible,
 .nav__links a:focus-visible,
 .nav__mobile-menu a:focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; border-radius: 4px; }
@@ -1079,6 +1101,7 @@ section {
   .faq-item__toggle { transition: none; }
   .btn { transition: none; }
   .nav__links a { transition: none; }
+  [data-vfh] span { transition: none; }
   .footer__links a { transition: none; }
   html { scroll-behavior: auto; }
 }
