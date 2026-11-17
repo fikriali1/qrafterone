@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qrafter — QR Menu Ordering for Restaurants</title>
+  <meta name="description" content="From table to kitchen. QR ordering that keeps your front of house and kitchen connected. Free to start.">
+  <meta name="theme-color" content="#F5F6FA">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="page">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="blob" style="width:620px;height:620px;background:#8B5CF6;top:-160px;right:-80px" aria-hidden="true"></div>
+  <div class="blob" style="width:520px;height:520px;background:#22D3EE;top:260px;right:360px;opacity:.45" aria-hidden="true"></div>
+  <div class="blob" style="width:520px;height:520px;background:#22D3EE;top:1500px;left:-220px;opacity:.38" aria-hidden="true"></div>
+  <div class="blob" style="width:560px;height:560px;background:#A78BFA;top:2500px;right:-200px;opacity:.42" aria-hidden="true"></div>
+  <div class="blob" style="width:520px;height:520px;background:#67E8F9;top:3700px;left:200px;opacity:.38" aria-hidden="true"></div>
+  <div class="blob" style="width:620px;height:620px;background:#8B5CF6;top:4700px;right:100px;opacity:.40" aria-hidden="true"></div>
+
+  <!-- ========== NAV ========== -->
+  <header class="wrap nav-wrap">
+    <nav class="glass nav" id="nav">
+      <a href="#" class="nav__logo">
+        <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="2" y="2" width="11" height="11" rx="3" fill="#6D3BEA"/><rect x="17" y="2" width="11" height="11" rx="3" fill="none" stroke="#6D3BEA" stroke-width="2.4"/><rect x="2" y="17" width="11" height="11" rx="3" fill="none" stroke="#12C2E0" stroke-width="2.4"/><rect x="18" y="18" width="4" height="4" rx="1" fill="#12C2E0"/><rect x="24" y="24" width="4" height="4" rx="1" fill="#12C2E0"/></svg>
+        Qrafter
+      </a>
+      <div class="nav__links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="nav__actions">
+        <a href="#" class="btn btn--sm btn-ghost">Log in</a>
+        <a href="#" class="btn btn--sm btn-primary">Start free</a>
+      </div>
+      <button class="nav__hamburger" aria-expanded="false" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+      </button>
+    </nav>
+    <div class="glass nav__mobile-menu">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#" class="btn btn-ghost" style="justify-content:center">Log in</a>
+      <a href="#" class="btn btn-primary" style="justify-content:center">Start free</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__content">
+          <h1 class="hero__headline">From table to kitchen.<br><span class="accent">Orders just flow.</span></h1>
+
+          <p class="lead">Let guests order straight from their tables with QR ordering that keeps your front of house and kitchen connected. Less manual order-taking, smoother service, and a system that grows with your restaurant.</p>
+
+          <div class="hero__buttons">
+            <a href="#" class="btn btn--lg btn-primary">Start free <span aria-hidden="true">→</span></a>
+            <a href="#how-it-works" class="btn btn--lg glass">See how it works</a>
+          </div>
+
+          <div class="hero__proof">
+            <span>✓ No setup fee</span>
+            <span>✓ Dine-in &amp; takeaway</span>
+          </div>
+        </div>
+
+        <!-- Hero visual -->
+        <div class="hero__visual" aria-hidden="true">
+          <!-- Phone mockup -->
+          <div class="glass hero__phone">
+            <div class="phone-screen">
+              <div class="phone-screen__header">
+                <div class="mono phone-screen__table" style="color:var(--mute);font-size:10px">Table 07 · Dine-in</div>
+                <div class="phone-screen__title">Menu</div>
+                <div class="phone-screen__tabs">
+                  <span class="phone-screen__tab phone-screen__tab--active">Popular</span>
+                  <span class="phone-screen__tab">Rice</span>
+                  <span class="phone-screen__tab">Drinks</span>
+                </div>
+              </div>
+              <div class="phone-screen__items">
+                <div class="phone-screen__item">
+                  <div class="phone-screen__item-img" style="background:linear-gradient(135deg,#FBD38D,#F6AD55)"></div>
+                  <div class="phone-screen__item-info">
+                    <div class="phone-screen__item-name">Nasi Goreng Special</div>
+                    <div class="phone-screen__item-price">Rp&nbsp;38.000</div>
+                  </div>
+                  <div class="phone-screen__item-action" style="background:var(--violet);color:#fff;font-size:14px">+</div>
+                </div>
+                <div class="phone-screen__item">
+                  <div class="phone-screen__item-img" style="background:linear-gradient(135deg,#C6F6D5,#68D391)"></div>
+                  <div class="phone-screen__item-info">
+                    <div class="phone-screen__item-name">Es Teh Lemon</div>
+                    <div class="phone-screen__item-price">Rp&nbsp;15.000</div>
+                  </div>
+                  <div class="phone-screen__item-action" style="background:#EEF0F6;color:var(--ink);font-size:12px">2</div>
+                </div>
+                <div class="phone-screen__item">
+                  <div class="phone-screen__item-img" style="background:linear-gradient(135deg,#FED7E2,#F687B3)"></div>
+                  <div class="phone-screen__item-info">
+                    <div class="phone-screen__item-name">Mie Ayam Bakso</div>
+                    <div class="phone-screen__item-price">Rp&nbsp;32.000</div>
+                  </div>
+                  <div class="phone-screen__item-action" style="background:var(--violet);color:#fff;font-size:14px">+</div>
+                </div>
+                <div class="phone-screen__item">
+                  <div class="phone-screen__item-img" style="background:linear-gradient(135deg,#BEE3F8,#63B3ED)"></div>
+                  <div class="phone-screen__item-info">
+                    <div class="phone-screen__item-name">Kopi Susu Gula Aren</div>
+                    <div class="phone-screen__item-price">Rp&nbsp;22.000</div>
+                  </div>
+                  <div class="phone-screen__item-action" style="background:var(--violet);color:#fff;font-size:14px">+</div>
+                </div>
+              </div>
+              <div class="phone-screen__cart">
+                <span>3 items · Rp&nbsp;68.000</span>
+                <span class="phone-screen__cart-action">Order →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating cards -->
+          <div class="glass hero__float hero__float--order">
+            <div class="mono hero__float-label" style="color:var(--cyan-d)">Order #024 · Table 07</div>
+            <div class="hero__float-value">Sent to kitchen</div>
+            <div class="hero__float-progress"><div class="hero__float-progress-bar"></div></div>
+          </div>
+
+          <div class="glass hero__float hero__float--revenue">
+            <div class="mono hero__float-label" style="color:var(--mute)">Today · Revenue</div>
+            <div class="hero__float-revenue-value">Rp&nbsp;4,2&nbsp;jt</div>
+            <svg viewBox="0 0 160 40" width="160" height="40" style="margin-top:6px"><polyline points="0,32 22,28 44,30 66,18 88,22 110,12 132,14 160,4" fill="none" stroke="#6D3BEA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+
+          <div class="glass hero__float hero__float--paid">
+            <div class="hero__float-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E8FA6" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:600;font-size:14px">Paid at cashier</div>
+              <div style="color:var(--mute);font-size:12px">Table 12 · Sent to kitchen</div>
+            </div>
+          </div>
+
+          <div class="glass hero__float hero__float--kitchen">
+            <div class="mono hero__float-label" style="color:var(--mute)">Kitchen queue</div>
+            <div class="hero__float-kitchen-bars">
+              <span style="background:var(--violet)"></span>
+              <span style="background:rgba(109,59,234,.45)"></span>
+              <span style="background:rgba(18,194,224,.45)"></span>
+              <span style="background:rgba(20,21,43,.08)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TRUST STRIP ========== -->
+    <section class="trust-strip-section" style="padding:0">
+      <div class="wrap">
+        <div class="glass trust-strip reveal">
+          <div class="trust-strip__text">Built by <b>Franchise One</b>, the franchise enablement platform behind Indonesian F&amp;B brands.</div>
+          <div class="trust-strip__stats">
+            <div>
+              <div class="trust-strip__stat-value">20+</div>
+              <div class="trust-strip__stat-label">brands</div>
+            </div>
+            <div>
+              <div class="trust-strip__stat-value">500+</div>
+              <div class="trust-strip__stat-label">active branches</div>
+            </div>
+            <div>
+              <div class="trust-strip__stat-value"><span class="placeholder">[#]</span></div>
+              <div class="trust-strip__stat-label">orders processed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PAIN POINTS ========== -->
+    <section class="pain-points">
+      <div class="wrap">
+        <div class="mono eyebrow">The rush-hour problem</div>
+        <h2 class="h2">When it gets busy, everything falls apart at once.</h2>
+
+        <div class="pain-points__grid reveal-stagger">
+          <div class="glass pain-card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h12M3 17h7"/></svg></div>
+            <h3>Long cashier queues</h3>
+            <p>Guests wait in line twice, once to order and again to pay, for dine-in and takeaway alike.</p>
+          </div>
+          <div class="glass pain-card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></div>
+            <h3>A kitchen with no clear queue</h3>
+            <p>Order tickets get lost between the floor and the kitchen, so prep slows down right when it matters.</p>
+          </div>
+          <div class="glass pain-card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+            <h3>&ldquo;Which table was that?&rdquo;</h3>
+            <p>Waiters walk the floor with a tray, hunting for the guest who ordered at the counter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section id="how-it-works" class="steps">
+      <div class="wrap">
+        <div class="mono eyebrow">How it works</div>
+        <h2 class="h2">From scan to served in four steps.</h2>
+        <div class="steps__container">
+          <div class="steps__line" aria-hidden="true"></div>
+          <div class="steps__grid reveal-stagger">
+            <div class="glass step-card reveal">
+              <div class="mono step-card__number">01</div>
+              <h3>Scan</h3>
+              <p>Every table has its own QR code. Guests see the full menu with photos and prices.</p>
+            </div>
+            <div class="glass step-card reveal">
+              <div class="mono step-card__number">02</div>
+              <h3>Order</h3>
+              <p>Pick variants and add-ons, leave a note for the kitchen. No waiter needed.</p>
+            </div>
+            <div class="glass step-card reveal">
+              <div class="mono step-card__number">03</div>
+              <h3>Pay</h3>
+              <p>Guests pay at the cashier. Once paid, the order goes straight to the kitchen queue.</p>
+            </div>
+            <div class="glass step-card reveal">
+              <div class="mono step-card__number step-card__number--accent">04</div>
+              <h3>Track</h3>
+              <p>The kitchen works through its queue, guests see live status, and every order is recorded.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURES BENTO ========== -->
+    <section id="features" class="features">
+      <div class="wrap">
+        <div class="mono eyebrow">For owners</div>
+        <h2 class="h2">Behind the scenes, you're always in control.</h2>
+        <div class="features__grid reveal-stagger">
+          <!-- Dashboard card (wide) -->
+          <div class="glass feature-card feature-card--wide reveal">
+            <div>
+              <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+              <h3>Real-time dashboard</h3>
+              <p style="color:var(--ink2);margin:10px 0 0">Orders, revenue and average kitchen prep time, updated live. Know your best-selling items without asking your cashier.</p>
+            </div>
+            <div class="mini-dashboard">
+              <div class="mini-dashboard__header">
+                <div class="mono" style="color:var(--mute);font-size:10px">All outlets · Today</div>
+                <div class="mono mini-dashboard__live"><span class="dot"></span>Live</div>
+              </div>
+              <div class="mini-dashboard__stats">
+                <div class="mini-dashboard__stat">
+                  <div class="mini-dashboard__stat-label">Orders</div>
+                  <div class="mini-dashboard__stat-value">128</div>
+                </div>
+                <div class="mini-dashboard__stat">
+                  <div class="mini-dashboard__stat-label">Revenue</div>
+                  <div class="mini-dashboard__stat-value">4,2 jt</div>
+                </div>
+                <div class="mini-dashboard__stat">
+                  <div class="mini-dashboard__stat-label">Avg prep</div>
+                  <div class="mini-dashboard__stat-value">9 min</div>
+                </div>
+              </div>
+              <div class="mini-dashboard__chart">
+                <div class="mini-dashboard__bar" style="height:30%;background:rgba(109,59,234,.25)"></div>
+                <div class="mini-dashboard__bar" style="height:45%;background:rgba(109,59,234,.25)"></div>
+                <div class="mini-dashboard__bar" style="height:38%;background:rgba(109,59,234,.25)"></div>
+                <div class="mini-dashboard__bar" style="height:70%;background:rgba(109,59,234,.4)"></div>
+                <div class="mini-dashboard__bar" style="height:95%;background:var(--violet)"></div>
+                <div class="mini-dashboard__bar" style="height:80%;background:rgba(109,59,234,.4)"></div>
+                <div class="mini-dashboard__bar" style="height:55%;background:rgba(18,194,224,.5)"></div>
+                <div class="mini-dashboard__bar" style="height:40%;background:rgba(18,194,224,.35)"></div>
+              </div>
+              <div class="mono mini-dashboard__time" style="color:var(--mute)"><span>10:00</span><span>13:00</span><span>17:00</span></div>
+            </div>
+          </div>
+
+          <!-- Kitchen order queue -->
+          <div class="glass feature-card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg></div>
+            <h3>Kitchen order queue</h3>
+            <p>Every order lands in one clear queue with table, items and notes, so the kitchen always knows what's next.</p>
+          </div>
+
+          <!-- Tables & QR codes -->
+          <div class="glass feature-card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3zM20 20h1M17 20h.01M20 14v3"/></svg></div>
+            <h3>Tables &amp; QR codes</h3>
+            <p>Set up indoor, outdoor or any floor area, see which tables are occupied, and print a QR per table.</p>
+          </div>
+
+          <!-- Menu in seconds -->
+          <div class="glass feature-card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2"/></svg></div>
+            <h3>Menu in seconds</h3>
+            <p>Add items, variants, add-ons and photos, or switch an item off when it sells out, from anywhere.</p>
+          </div>
+
+          <!-- Revenue tracking -->
+          <div class="glass feature-card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+            <h3>Revenue tracking</h3>
+            <p>See revenue by day and by outlet, with every order recorded and easy to filter.</p>
+          </div>
+        </div>
+
+        <!-- Feature tags -->
+        <div class="feature-tags">
+          <span class="glass feature-tag">Team accounts with PIN access</span>
+          <span class="glass feature-tag">Order history with filters</span>
+          <span class="glass feature-tag">Dine-in &amp; takeaway</span>
+          <span class="glass feature-tag">Multi-outlet view</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PRICING ========== -->
+    <section id="pricing" class="pricing">
+      <div class="wrap">
+        <div class="pricing__header">
+          <div class="mono eyebrow">Pricing</div>
+          <h2 class="h2">Start free. Upgrade when you grow.</h2>
+        </div>
+        <div class="pricing__grid reveal-stagger">
+          <!-- Free -->
+          <div class="glass price-card price-card--featured reveal">
+            <div class="mono price-card__badge">Start here</div>
+            <h3 class="price-card__name">Free</h3>
+            <div class="price-card__price">Rp&nbsp;0</div>
+            <div class="price-card__desc">1 branch · 20 staff seats · 1,000 txn/month</div>
+            <a href="#" class="btn btn-primary">Start free</a>
+            <div class="price-card__features">
+              <div>✓ QR ordering per table</div>
+              <div>✓ Digital menu &amp; photos</div>
+              <div>✓ Kitchen order queue</div>
+              <div class="placeholder">No credit card required</div>
+            </div>
+          </div>
+
+          <!-- Pro -->
+          <div class="glass price-card reveal">
+            <h3 class="price-card__name">Pro</h3>
+            <div class="price-card__price"><span class="placeholder">[TBD]</span></div>
+            <div class="price-card__desc">per outlet / month</div>
+            <a href="#" class="btn glass" style="color:var(--ink);border-radius:var(--radius-pill)">Choose Pro</a>
+            <div class="price-card__features">
+              <div>✓ Everything in Free</div>
+              <div>✓ Real-time dashboard</div>
+              <div class="placeholder">Pro features to be confirmed</div>
+            </div>
+          </div>
+
+          <!-- Business -->
+          <div class="glass price-card reveal">
+            <h3 class="price-card__name">Business</h3>
+            <div class="price-card__price"><span class="placeholder">[TBD]</span></div>
+            <div class="price-card__desc">for multi-outlet brands</div>
+            <a href="#" class="btn glass" style="color:var(--ink);border-radius:var(--radius-pill)">Talk to us</a>
+            <div class="price-card__features">
+              <div>✓ Everything in Pro</div>
+              <div>✓ Multi-outlet view</div>
+              <div>✓ Team roles &amp; PIN access</div>
+              <div class="placeholder">Business features to be confirmed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section id="faq" class="faq">
+      <div class="wrap">
+        <div class="faq__grid">
+          <div class="faq__heading">
+            <div class="mono eyebrow">FAQ</div>
+            <h2 class="h2" style="font-size:44px">Questions owners ask us.</h2>
+          </div>
+          <div class="faq__list">
+            <!-- Q1 — expanded by default -->
+            <div class="glass faq-item is-open">
+              <button class="faq-item__question" aria-expanded="true">
+                Do my guests need to install an app?
+                <span class="faq-item__toggle" aria-hidden="true">−</span>
+              </button>
+              <div class="faq-item__answer">
+                <div class="faq-item__answer-inner">
+                  <p>No. They scan the table QR with their phone camera and the menu opens in the browser.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="glass faq-item">
+              <button class="faq-item__question" aria-expanded="false">
+                How do guests pay?
+                <span class="faq-item__toggle" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__answer">
+                <div class="faq-item__answer-inner">
+                  <p>At the cashier. Guests order from the table, pay at the cashier, and the order goes to the kitchen once it's paid.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="glass faq-item">
+              <button class="faq-item__question" aria-expanded="false">
+                Does it work for takeaway too?
+                <span class="faq-item__toggle" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__answer">
+                <div class="faq-item__answer-inner">
+                  <p>Yes. Qrafter handles both dine-in and takeaway orders.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="glass faq-item">
+              <button class="faq-item__question" aria-expanded="false">
+                Who sets up the menu and QR codes?
+                <span class="faq-item__toggle" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__answer">
+                <div class="faq-item__answer-inner">
+                  <div class="placeholder--block">Answer to be confirmed.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="glass faq-item">
+              <button class="faq-item__question" aria-expanded="false">
+                What happens if I go over 1,000 transactions on the Free plan?
+                <span class="faq-item__toggle" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__answer">
+                <div class="faq-item__answer-inner">
+                  <div class="placeholder--block">Answer to be confirmed.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q6 -->
+            <div class="glass faq-item">
+              <button class="faq-item__question" aria-expanded="false">
+                Can I use my existing POS or printer?
+                <span class="faq-item__toggle" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__answer">
+                <div class="faq-item__answer-inner">
+                  <div class="placeholder--block">Answer to be confirmed.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q7 -->
+            <div class="glass faq-item">
+              <button class="faq-item__question" aria-expanded="false">
+                Is my data safe if I upgrade or downgrade?
+                <span class="faq-item__toggle" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__answer">
+                <div class="faq-item__answer-inner">
+                  <div class="placeholder--block">Answer to be confirmed.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FINAL CTA ========== -->
+    <section class="cta-final">
+      <div class="wrap">
+        <div class="glass cta-final__card">
+          <div class="cta-final__blob cta-final__blob--cyan" aria-hidden="true"></div>
+          <div class="cta-final__blob cta-final__blob--violet" aria-hidden="true"></div>
+          <div class="cta-final__content">
+            <h2 class="cta-final__headline">Clear the queue tonight.</h2>
+            <p class="lead" style="margin:18px auto 0;max-width:none;text-align:center">Set up your tables, print your QR codes and take your first order. Free to start.</p>
+            <div class="cta-final__buttons">
+              <a href="#" class="btn btn--lg btn-primary">Start free <span aria-hidden="true">→</span></a>
+              <a href="#" class="btn btn--lg glass">Request a demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer wrap">
+    <div class="footer__inner">
+      <div class="footer__logo">
+        <svg width="22" height="22" viewBox="0 0 30 30" aria-hidden="true"><rect x="2" y="2" width="11" height="11" rx="3" fill="#6D3BEA"/><rect x="17" y="2" width="11" height="11" rx="3" fill="none" stroke="#6D3BEA" stroke-width="2.4"/><rect x="2" y="17" width="11" height="11" rx="3" fill="none" stroke="#12C2E0" stroke-width="2.4"/><rect x="18" y="18" width="4" height="4" rx="1" fill="#12C2E0"/><rect x="24" y="24" width="4" height="4" rx="1" fill="#12C2E0"/></svg>
+        Qrafter <span>· a Franchise One product</span>
+      </div>
+      <div class="footer__links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>© 2026 Franchise One</div>
+    </div>
+  </footer>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
