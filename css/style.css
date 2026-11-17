@@ -42,7 +42,7 @@ h1, h2, h3 {
   color: var(--ink);
 }
 
-a { color: inherit; text-decoration: none; }
+a { color: inherit; text-decoration: none; cursor: pointer; }
 img { max-width: 100%; display: block; }
 button { font: inherit; cursor: pointer; border: none; background: none; padding: 0; }
 
@@ -128,6 +128,15 @@ section {
   -webkit-backdrop-filter: blur(22px) saturate(160%);
   box-shadow: 0 1px 0 rgba(255,255,255,.9) inset, 0 18px 50px -18px rgba(40,30,110,.22);
   border-radius: var(--radius-card);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.pain-card:hover,
+.step-card:hover,
+.feature-card:hover,
+.price-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1px 0 rgba(255,255,255,.9) inset, 0 24px 60px -18px rgba(40,30,110,.28);
 }
 
 /* Buttons */
@@ -149,6 +158,7 @@ section {
 }
 
 .btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(1px); }
 .btn:focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; }
 
 .btn-primary {
@@ -1064,6 +1074,7 @@ section {
 /* ===== 8. REDUCED MOTION ===== */
 @media (prefers-reduced-motion: reduce) {
   .reveal { transition: none; opacity: 1; transform: none; }
+  .glass { transition: none; }
   .faq-item__answer { transition: none; }
   .faq-item__toggle { transition: none; }
   .btn { transition: none; }
