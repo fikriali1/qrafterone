@@ -74,14 +74,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (section) sections.push({ id, el: section });
   });
 
+  let activeSection = null;
   const spyObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        navLinks.forEach(l => l.classList.remove('is-active'));
-        const match = document.querySelector(`.nav__links a[href="#${entry.target.id}"]`);
-        if (match) match.classList.add('is-active');
+        activeSection = entry.target.id;
+      } else if (entry.target.id === activeSection) {
+        activeSection = null;
       }
     });
+    navLinks.forEach(l => l.classList.remove('is-active'));
+    if (activeSection) {
+      const match = document.querySelector(`.nav__links a[href="#${activeSection}"]`);
+      if (match) match.classList.add('is-active');
+    }
   }, {
     threshold: 0,
     rootMargin: '-40% 0px -60% 0px'
