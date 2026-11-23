@@ -47,6 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ===== SHINY-CTA VISIBILITY (pause when offscreen) ===== */
+  const shinyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle('is-animating', entry.isIntersecting);
+    });
+  });
+  document.querySelectorAll('.shiny-cta').forEach(el => shinyObserver.observe(el));
+
   /* ===== SCROLL REVEAL ===== */
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

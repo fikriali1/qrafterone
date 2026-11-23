@@ -8,23 +8,24 @@
   <meta name="theme-color" content="#F5F6FA">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
 <div class="page">
   <div class="grid-bg" aria-hidden="true"></div>
-  <div class="blob" style="width:620px;height:620px;background:#8B5CF6;top:-160px;right:-80px" aria-hidden="true"></div>
-  <div class="blob" style="width:520px;height:520px;background:#22D3EE;top:260px;right:360px;opacity:.45" aria-hidden="true"></div>
-  <div class="blob" style="width:520px;height:520px;background:#22D3EE;top:1500px;left:-220px;opacity:.38" aria-hidden="true"></div>
-  <div class="blob" style="width:560px;height:560px;background:#A78BFA;top:2500px;right:-200px;opacity:.42" aria-hidden="true"></div>
-  <div class="blob" style="width:520px;height:520px;background:#67E8F9;top:3700px;left:200px;opacity:.38" aria-hidden="true"></div>
-  <div class="blob" style="width:620px;height:620px;background:#8B5CF6;top:4700px;right:100px;opacity:.40" aria-hidden="true"></div>
+  <div class="blob" style="width:620px;height:620px;background:radial-gradient(circle,rgba(139,92,246,.55) 0%,transparent 70%);top:-160px;right:-80px" aria-hidden="true"></div>
+  <div class="blob" style="width:520px;height:520px;background:radial-gradient(circle,rgba(34,211,238,.45) 0%,transparent 70%);top:260px;right:360px" aria-hidden="true"></div>
+  <div class="blob" style="width:520px;height:520px;background:radial-gradient(circle,rgba(34,211,238,.38) 0%,transparent 70%);top:1500px;left:-220px" aria-hidden="true"></div>
+  <div class="blob" style="width:560px;height:560px;background:radial-gradient(circle,rgba(167,139,250,.42) 0%,transparent 70%);top:2500px;right:-200px" aria-hidden="true"></div>
+  <div class="blob" style="width:520px;height:520px;background:radial-gradient(circle,rgba(103,232,249,.38) 0%,transparent 70%);top:3700px;left:200px" aria-hidden="true"></div>
+  <div class="blob" style="width:620px;height:620px;background:radial-gradient(circle,rgba(139,92,246,.40) 0%,transparent 70%);top:4700px;right:100px" aria-hidden="true"></div>
 
   <!-- ========== NAV ========== -->
   <header class="wrap nav-wrap">
-    <nav class="glass nav" id="nav">
+    <nav class="glass glass-blur nav" id="nav">
       <a href="#" class="nav__logo">
         <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="2" y="2" width="11" height="11" rx="3" fill="#6D3BEA"/><rect x="17" y="2" width="11" height="11" rx="3" fill="none" stroke="#6D3BEA" stroke-width="2.4"/><rect x="2" y="17" width="11" height="11" rx="3" fill="none" stroke="#12C2E0" stroke-width="2.4"/><rect x="18" y="18" width="4" height="4" rx="1" fill="#12C2E0"/><rect x="24" y="24" width="4" height="4" rx="1" fill="#12C2E0"/></svg>
         Qrafter
@@ -43,7 +44,7 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
       </button>
     </nav>
-    <div class="glass nav__mobile-menu">
+    <div class="glass glass-blur nav__mobile-menu">
       <a href="#features">Features</a>
       <a href="#how-it-works">How it works</a>
       <a href="#pricing">Pricing</a>
@@ -77,7 +78,7 @@
         <!-- Hero visual -->
         <div class="hero__visual" aria-hidden="true">
           <!-- Phone mockup -->
-          <div class="glass hero__phone">
+          <div class="glass glass-blur hero__phone">
             <div class="phone-screen">
               <div class="phone-screen__header">
                 <div class="mono phone-screen__table" style="color:var(--mute);font-size:10px">Table 07 · Dine-in</div>
@@ -492,7 +493,7 @@
     <!-- ========== FINAL CTA ========== -->
     <section class="cta-final">
       <div class="wrap">
-        <div class="glass cta-final__card">
+        <div class="glass glass-blur cta-final__card">
           <div class="cta-final__blob cta-final__blob--cyan" aria-hidden="true"></div>
           <div class="cta-final__blob cta-final__blob--violet" aria-hidden="true"></div>
           <div class="cta-final__content">
@@ -528,6 +529,5 @@
   </footer>
 </div>
 
-<script src="js/main.js"></script>
 </body>
 </html>
