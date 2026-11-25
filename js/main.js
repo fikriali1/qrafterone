@@ -1,3 +1,9 @@
+// TODO: replace with the real waitlist endpoint (Google Sheets, form service or vendor API)
+const WAITLIST_ENDPOINT = "";
+
+// TODO: connect to analytics
+function trackEvent(name, data) { console.log("[track]", name, data); }
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ===== VARIABLE FONT NAV HOVER ===== */
@@ -134,5 +140,170 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  /* ===== WAITLIST MODAL ===== */
+  const modal = document.getElementById('waitlist-modal');
+  const modalContent = modal ? modal.querySelector('.modal') : null;
+  const form = document.getElementById('waitlist-form');
+  let modalTrigger = null;
+  let modalSource = '';
+
+  function openModal(trigger) {
+    modalTrigger = trigger;
+    modalSource = trigger.dataset.source || '';
+    modal.hidden = false;
+    requestAnimationFrame(() => modal.classList.add('is-open'));
+    document.body.style.overflow = 'hidden';
+    const first = form.querySelector('input, select');
+    if (first) first.focus();
+    trackEvent('waitlist_open', { source: modalSource });
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(() => { modal.hidden = true; }, 200);
+    if (modalTrigger) { modalTrigger.focus(); modalTrigger = null; }
+    form.reset();
+    form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+    modal.querySelector('.modal__success').hidden = true;
+    modal.querySelector('.modal__error').hidden = true;
+    modal.querySelector('.modal__body > form').style.display = '';
+    modal.querySelector('.modal__intro').style.display = '';
+    const otherField = form.querySelector('.form-field__other');
+    if (otherField) otherField.hidden = true;
+  }
+
+  if (modal) {
+    document.querySelectorAll('.js-open-waitlist').forEach(btn => {
+      btn.addEventListener('click', () => openModal(btn));
+    });
+
+    modal.querySelector('.modal__close').addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.hidden) closeModal();
+    });
+
+    // Focus trap
+    modal.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+      const focusable = modal.querySelectorAll('input, select, button, [tabindex]:not([tabindex="-1"])');
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+  }
+
+  /* ===== WAITLIST FORM SUBMIT ===== */
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Validate required fields
+      let valid = true;
+      form.querySelectorAll('[required]').forEach(field => {
+        if (field.type === 'checkbox') {
+          field.classList.toggle('is-invalid', !field.checked);
+          if (!field.checked) valid = false;
+        } else {
+          field.classList.toggle('is-invalid', !field.value.trim());
+          if (!field.value.trim()) valid = false;
+        }
+      });
+
+      const emailField = form.querySelector('[type="email"]');
+      if (emailField && emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
+        emailField.classList.add('is-invalid');
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      const checked = [...form.querySelectorAll('input[name="interestedFeatures"]:checked')];
+      const interestedFeatures = checked.map(cb => {
+        if (cb.dataset.other !== undefined) {
+          const otherText = form.querySelector('.form-field__other').value.trim();
+          return otherText ? 'Other: ' + otherText : 'Other';
+        }
+        return cb.value;
+      });
+
+      const payload = {
+        name: form.name.value.trim(),
+        businessName: form.businessName.value.trim(),
+        email: form.email.value.trim(),
+        businessType: form.businessType.value,
+        branches: form.branches.value,
+        country: form.country.value || '',
+        interestedFeatures,
+        consent: form.consent.checked,
+        source: modalSource,
+        submittedAt: new Date().toISOString()
+      };
+
+      const submitBtn = form.querySelector('.modal__submit');
+
+      if (!WAITLIST_ENDPOINT) {
+        console.log('[waitlist]', JSON.stringify(payload, null, 2));
+        form.style.display = 'none';
+        modal.querySelector('.modal__intro').style.display = 'none';
+        modal.querySelector('.modal__success').hidden = false;
+        trackEvent('waitlist_submit', payload);
+        return;
+      }
+
+      submitBtn.classList.add('is-loading');
+      submitBtn.textContent = 'Submitting…';
+
+      try {
+        const res = await fetch(WAITLIST_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) throw new Error(res.statusText);
+        form.style.display = 'none';
+        modal.querySelector('.modal__intro').style.display = 'none';
+        modal.querySelector('.modal__success').hidden = false;
+        trackEvent('waitlist_submit', payload);
+      } catch {
+        modal.querySelector('.modal__error').hidden = false;
+      } finally {
+        submitBtn.classList.remove('is-loading');
+        submitBtn.textContent = 'Join the waitlist';
+      }
+    });
+
+    // Clear validation on input
+    form.addEventListener('input', (e) => {
+      e.target.classList.remove('is-invalid');
+    });
+  }
+
+  /* ===== "OTHER" CHECKBOX TOGGLE ===== */
+  const otherCheckbox = form ? form.querySelector('input[data-other]') : null;
+  const otherInput = form ? form.querySelector('.form-field__other') : null;
+  if (otherCheckbox && otherInput) {
+    otherCheckbox.addEventListener('change', () => {
+      otherInput.hidden = !otherCheckbox.checked;
+      if (otherCheckbox.checked) otherInput.focus();
+    });
+  }
+
+  /* ===== START FREE TRACKING ===== */
+  document.querySelectorAll('.js-start-free').forEach(btn => {
+    btn.addEventListener('click', () => {
+      trackEvent('start_free_click', {});
+    });
+  });
 
 });

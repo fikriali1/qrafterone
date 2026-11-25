@@ -338,50 +338,152 @@
       <div class="wrap">
         <div class="pricing__header">
           <div class="mono eyebrow">Pricing</div>
-          <h2 class="h2">Start free. Upgrade when you grow.</h2>
+          <h2 class="h2">Start free. Grow when you're ready.</h2>
+          <p class="lead">Qrafter is in early access for restaurants, cafés and food outlets. Start with Free today, or save your spot as one of our first 100 Founding Members.</p>
         </div>
+
         <div class="pricing__grid reveal-stagger">
           <!-- Free -->
-          <div class="glass price-card price-card--featured reveal">
-            <div class="mono price-card__badge">Start here</div>
+          <div class="glass price-card reveal">
+            <div class="price-card__badge-pill">Available now · Culinary only</div>
             <h3 class="price-card__name">Free</h3>
-            <div class="price-card__price">Rp&nbsp;0</div>
-            <div class="price-card__desc">1 branch · 20 staff seats · 1,000 txn/month</div>
-            <a href="#" class="btn shiny-cta"><span>Start free</span></a>
-            <div class="price-card__features">
-              <div>✓ QR ordering per table</div>
-              <div>✓ Digital menu &amp; photos</div>
-              <div>✓ Kitchen order queue</div>
-              <div class="placeholder">No credit card required</div>
-            </div>
+            <div class="price-card__price">Free</div>
+            <p class="price-card__tagline">For restaurants, cafés and food outlets getting started with QR ordering.</p>
+            <ul class="price-card__list">
+              <li class="price-card__item price-card__item--check">1 brand, 1 branch</li>
+              <li class="price-card__item price-card__item--check">Up to 20 tables</li>
+              <li class="price-card__item price-card__item--check">Up to 1,000 transactions / month</li>
+              <li class="price-card__item price-card__item--check">QR table menu</li>
+              <li class="price-card__item price-card__item--check">Order, menu and table management</li>
+              <li class="price-card__item price-card__item--check">Cash payment at the cashier</li>
+              <li class="price-card__item price-card__item--check">Basic dashboard + Excel export</li>
+            </ul>
+            <!-- TODO: replace # with sign-up URL -->
+            <a href="#" class="btn shiny-cta js-start-free"><span>Start free</span></a>
+            <p class="price-card__helper">No credit card needed.</p>
           </div>
 
-          <!-- Pro -->
-          <div class="glass price-card reveal">
-            <h3 class="price-card__name">Pro</h3>
-            <div class="price-card__price"><span class="placeholder">[TBD]</span></div>
-            <div class="price-card__desc">per outlet / month</div>
-            <a href="#" class="btn glass" style="color:var(--ink);border-radius:var(--radius-pill)">Choose Pro</a>
-            <div class="price-card__features">
-              <div>✓ Everything in Free</div>
-              <div>✓ Real-time dashboard</div>
-              <div class="placeholder">Pro features to be confirmed</div>
-            </div>
+          <!-- Founding Member -->
+          <div class="glass price-card price-card--featured reveal">
+            <div class="mono price-card__badge">Only 100 slots</div>
+            <h3 class="price-card__name">Founding Member</h3>
+            <div class="price-card__price">Early access pricing</div>
+            <div class="price-card__price-sub">One-time payment · Lifetime access</div>
+            <p class="price-card__tagline">Lock in lifetime access before we open to everyone.</p>
+            <h4 class="price-card__list-heading">Everything in Free, plus:</h4>
+            <ul class="price-card__list">
+              <li class="price-card__item price-card__item--check">Up to 5 branches</li>
+              <li class="price-card__item price-card__item--check">Up to 50 tables per branch</li>
+              <li class="price-card__item price-card__item--check">Up to 10,000 transactions / month</li>
+              <li class="price-card__item price-card__item--check">Custom QR menu design and your logo</li>
+              <li class="price-card__item price-card__item--check">No Qrafter watermark</li>
+              <li class="price-card__item price-card__item--check">Includes our next 3 major updates</li>
+            </ul>
+            <p class="price-card__status">Join the waitlist to get first access.</p>
+            <button type="button" class="btn flow-btn js-open-waitlist" data-source="pricing-founding-member"><svg class="flow-btn__arrow flow-btn__arrow--left" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span class="flow-btn__text">Join the waitlist</span><span class="flow-btn__circle" aria-hidden="true"></span><svg class="flow-btn__arrow flow-btn__arrow--right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
           </div>
+        </div>
 
-          <!-- Business -->
-          <div class="glass price-card reveal">
-            <h3 class="price-card__name">Business</h3>
-            <div class="price-card__price"><span class="placeholder">[TBD]</span></div>
-            <div class="price-card__desc">for multi-outlet brands</div>
-            <a href="#" class="btn glass" style="color:var(--ink);border-radius:var(--radius-pill)">Talk to us</a>
-            <div class="price-card__features">
-              <div>✓ Everything in Pro</div>
-              <div>✓ Multi-outlet view</div>
-              <div>✓ Team roles &amp; PIN access</div>
-              <div class="placeholder">Business features to be confirmed</div>
-            </div>
+        <!-- Business types teaser -->
+        <div class="glass pricing__teaser reveal">
+          <span class="mono pricing__teaser-label">Coming soon</span>
+          <span class="pricing__teaser-text">More business types are on the way: sports venues and court rentals, gyms and memberships, service businesses, apartments and boarding houses, and retail shops.</span>
+          <button type="button" class="pricing__teaser-link js-open-waitlist" data-source="business-type-teaser">Tell us yours →</button>
+        </div>
+
+        <!-- Compare table -->
+        <div class="pricing__compare reveal">
+          <div class="pricing__table-wrap">
+            <table class="pricing__table">
+              <caption class="sr-only">Compare Free and Founding Member</caption>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th scope="col">Free</th>
+                  <th scope="col">Founding Member</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Availability</th>
+                  <td>Available now</td>
+                  <td>Waitlist — first 100 only</td>
+                </tr>
+                <tr>
+                  <th scope="row">Business type</th>
+                  <td>Restaurants, cafés, food outlets</td>
+                  <td>Restaurants, cafés, food outlets (more types coming)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Brands</th>
+                  <td>1</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <th scope="row">Branches</th>
+                  <td>1</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tables</th>
+                  <td>20</td>
+                  <td>50 per branch</td>
+                </tr>
+                <tr>
+                  <th scope="row">Transactions / month</th>
+                  <td>1,000</td>
+                  <td>10,000</td>
+                </tr>
+                <tr>
+                  <th scope="row">QR table menu</th>
+                  <td>Basic</td>
+                  <td>Custom design</td>
+                </tr>
+                <tr>
+                  <th scope="row">Custom logo</th>
+                  <td><span aria-label="Not included">—</span></td>
+                  <td><span aria-label="Included">✓</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Qrafter watermark</th>
+                  <td>Shown on guest menu and QR table card</td>
+                  <td>None</td>
+                </tr>
+                <tr>
+                  <th scope="row">Order, menu &amp; table management</th>
+                  <td><span aria-label="Included">✓</span></td>
+                  <td><span aria-label="Included">✓</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Payment</th>
+                  <td>Cash at the cashier</td>
+                  <td>Cash at the cashier · online payment coming soon</td>
+                </tr>
+                <tr>
+                  <th scope="row">Reporting</th>
+                  <td>Basic dashboard + Excel export</td>
+                  <td>Basic dashboard + Excel export · advanced reporting coming soon</td>
+                </tr>
+                <tr>
+                  <th scope="row">Updates</th>
+                  <td>All Free updates</td>
+                  <td>Next 3 major updates included</td>
+                </tr>
+                <tr>
+                  <th scope="row">Billing</th>
+                  <td>Free</td>
+                  <td>One-time payment (early access pricing)</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+        </div>
+
+        <!-- Small print -->
+        <div class="pricing__fine-print">
+          <p>One table = one QR code.</p>
+          <p>Limits are soft: we'll let you know when you're close, and your orders never stop.</p>
+          <p>Founding Member pricing, terms and launch date will be shared with the waitlist first.</p>
         </div>
       </div>
     </section>
@@ -442,7 +544,7 @@
               </button>
               <div class="faq-item__answer">
                 <div class="faq-item__answer-inner">
-                  <div class="placeholder--block">Answer to be confirmed.</div>
+                  <p>You do — from the owner dashboard. Add your menu items, set prices, and generate a QR code for each table. No tech team needed.</p>
                 </div>
               </div>
             </div>
@@ -455,7 +557,7 @@
               </button>
               <div class="faq-item__answer">
                 <div class="faq-item__answer-inner">
-                  <div class="placeholder--block">Answer to be confirmed.</div>
+                  <p>We use soft limits — your orders keep working. We'll reach out to chat about upgrading when you're consistently above the cap.</p>
                 </div>
               </div>
             </div>
@@ -468,7 +570,7 @@
               </button>
               <div class="faq-item__answer">
                 <div class="faq-item__answer-inner">
-                  <div class="placeholder--block">Answer to be confirmed.</div>
+                  <p>Right now, payment happens at the cashier — outside Qrafter. POS and printer integrations are on the roadmap; join the waitlist to be first in line.</p>
                 </div>
               </div>
             </div>
@@ -481,7 +583,7 @@
               </button>
               <div class="faq-item__answer">
                 <div class="faq-item__answer-inner">
-                  <div class="placeholder--block">Answer to be confirmed.</div>
+                  <p>Yes. Your menu, orders and settings stay exactly as they are. You only gain or lose access to premium features — nothing is deleted.</p>
                 </div>
               </div>
             </div>
@@ -527,6 +629,88 @@
       <div>© 2026 Franchise One</div>
     </div>
   </footer>
+</div>
+
+<!-- ========== WAITLIST MODAL ========== -->
+<div class="modal-overlay" id="waitlist-modal" role="dialog" aria-modal="true" aria-labelledby="waitlist-title" hidden>
+  <div class="modal">
+    <button type="button" class="modal__close" aria-label="Close">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+    </button>
+    <div class="modal__body">
+      <h2 id="waitlist-title" class="modal__title">Join the Founding Member waitlist</h2>
+      <p class="modal__intro">Be first in line for one of 100 lifetime spots. We'll email you before it opens.</p>
+      <form id="waitlist-form" novalidate>
+        <div class="form-field">
+          <label for="wl-name">Full name</label>
+          <input type="text" id="wl-name" name="name" required autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="wl-business">Business name</label>
+          <input type="text" id="wl-business" name="businessName" required autocomplete="organization">
+        </div>
+        <div class="form-field">
+          <label for="wl-email">Email</label>
+          <input type="email" id="wl-email" name="email" required autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="wl-type">Business type</label>
+          <select id="wl-type" name="businessType" required>
+            <option value="">Select…</option>
+            <option value="culinary">Restaurant, café or food outlet</option>
+            <option value="sports">Sports venue or court rental</option>
+            <option value="gym">Gym or membership business</option>
+            <option value="service">Service business (e.g. AC cleaning, motorbike wash)</option>
+            <option value="apartment">Apartment or boarding house</option>
+            <option value="retail">Retail shop (warung, grocery, supermarket, cooperative)</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="wl-branches">Number of branches</label>
+          <select id="wl-branches" name="branches" required>
+            <option value="">Select…</option>
+            <option value="1">1</option>
+            <option value="2-5">2–5</option>
+            <option value="6-10">6–10</option>
+            <option value="10+">More than 10</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="wl-country">Country <span class="form-field__optional">(optional)</span></label>
+          <select id="wl-country" name="country">
+            <option value="">Select…</option>
+            <option value="ID">Indonesia</option>
+            <option value="MY">Malaysia</option>
+            <option value="SG">Singapore</option>
+            <option value="PH">Philippines</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <fieldset class="form-field form-field--checkboxes">
+          <legend>Which upcoming features do you want most? <span class="form-field__optional">(optional)</span></legend>
+          <label class="form-checkbox"><input type="checkbox" name="interestedFeatures" value="Online payment & POS integration"><span>Online payment &amp; POS integration</span></label>
+          <label class="form-checkbox"><input type="checkbox" name="interestedFeatures" value="Advanced reporting"><span>Advanced reporting</span></label>
+          <label class="form-checkbox"><input type="checkbox" name="interestedFeatures" value="Custom QR design and logo"><span>Custom QR design and logo</span></label>
+          <label class="form-checkbox"><input type="checkbox" name="interestedFeatures" value="More branches and tables"><span>More branches and tables</span></label>
+          <label class="form-checkbox"><input type="checkbox" name="interestedFeatures" value="Other" data-other><span>Other</span></label>
+          <input type="text" id="wl-features-other" class="form-field__other" placeholder="Tell us what you need…" hidden>
+        </fieldset>
+        <label class="modal__consent">
+          <input type="checkbox" name="consent" required>
+          <span>I agree to receive emails from Qrafter about early access.</span>
+        </label>
+        <button type="submit" class="btn btn-primary modal__submit">Join the waitlist</button>
+      </form>
+      <div class="modal__success" hidden>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11.5 14.5 16 9.5"/></svg>
+        <p>You're on the list! We'll email you before Founding Member opens.</p>
+      </div>
+      <div class="modal__error" hidden>
+        <p>Something went wrong. Please try again in a moment.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 </body>
