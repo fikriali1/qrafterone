@@ -1,5 +1,4 @@
-// TODO: replace with the real waitlist endpoint (Google Sheets, form service or vendor API)
-const WAITLIST_ENDPOINT = "";
+const WAITLIST_ENDPOINT = "https://script.google.com/macros/s/AKfycbwGdBd1kWCxfQX2ldQVWkB_EPJAY-ctuaTDLcY3kM2X7Xx_R7-4aczbz2ppxFdetZlr/exec";
 
 // TODO: connect to analytics
 function trackEvent(name, data) { console.log("[track]", name, data); }
@@ -245,6 +244,13 @@ document.addEventListener('DOMContentLoaded', () => {
         branches: form.branches.value,
         country: form.country.value || '',
         interestedFeatures,
+        interestedFeaturesOther: (() => {
+          const otherCb = form.querySelector('input[name="interestedFeatures"][data-other]');
+          if (otherCb && otherCb.checked) {
+            return form.querySelector('.form-field__other').value.trim() || '';
+          }
+          return '';
+        })(),
         consent: form.consent.checked,
         source: modalSource,
         submittedAt: new Date().toISOString()
@@ -267,10 +273,11 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         const res = await fetch(WAITLIST_ENDPOINT, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(payload)
         });
-        if (!res.ok) throw new Error(res.statusText);
+        const data = await res.json();
+        if (!data.ok) throw new Error('Submission failed');
         form.style.display = 'none';
         modal.querySelector('.modal__intro').style.display = 'none';
         modal.querySelector('.modal__success').hidden = false;
